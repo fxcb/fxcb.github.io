@@ -69,7 +69,7 @@
   <string role="key" value="_intendedEndUserRoleType"></string>
   <unicode value="learner"></unicode>
   <string role="key" value="_isChanged"></string>
-  <bool value="0"></bool>
+  <bool value="1"></bool>
   <string role="key" value="_isTemplate"></string>
   <bool value="0"></bool>
   <string role="key" value="_lang"></string>
@@ -587,7 +587,7 @@
                  <dictionary></dictionary>
                  <string role="key" value="content_w_resourcePaths"></string>
                  <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://historia.nationalgeographic.com.es/a/ada-lovelace-visionaria-hija-lord-byron_15864 https://www.nobbot.com/personas/ada-lovelace/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Article a National Geographic sobre Ada Lovelace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://historia.nationalgeographic.com.es/a/ada-lovelace-visionaria-hija-lord-byron_15864&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Article a National Geographic sobre Ada Lovelace&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://historia.nationalgeographic.com.es/a/ada-lovelace-visionaria-hija-lord-byron_15864 https://www.nobbot.com/personas/ada-lovelace/&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.nobbot.com/personas/ada-lovelace/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Article a Nobbot sobre Ada Lovelace&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://books.google.es/books?id=hPRmnQEACAAJ&amp;amp;hl=ca&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Original de “Sketch of the analytical engine invented by Charles Babbage” de L.F. Menabrea amb traducció i notes de Ada Lovelace&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://history-computer.com/Library/analitical_engine_general_view.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Plànols de la màquina analítica de Charles Babbage&lt;/a&gt;&lt;/li&gt;
@@ -1531,7 +1531,7 @@
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="19"></reference>
+  <reference key="8"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
