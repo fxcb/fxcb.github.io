@@ -4036,7 +4036,8 @@
                           <string role="key" value="anchor_names"></string>
                           <list></list>
                           <string role="key" value="content_w_resourcePaths"></string>
-                          <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Implementeu utilitzant l'eina &lt;a href=&quot;https://www.lucidchart.com/pages/&quot;&gt;Lucidchart &lt;/a&gt;o semblant l'algoritme de cerca binària expressat en diagrama de flux&lt;/p&gt;&lt;/div&gt;"></unicode>
+                          <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Implementeu utilitzant l'eina &lt;a href=&quot;https://www.lucidchart.com/pages/&quot;&gt;Lucidchart &lt;/a&gt;o semblant l'algoritme de cerca binària expressat en diagrama de flux.&lt;/p&gt;
+&lt;p&gt;Pengeu o enllaceu el diagrama creat en &lt;a href=&quot;https://educaciodigital.cat/insviladomat/moodle/mod/assign/view.php?id=132196&quot;&gt;aquesta tasca&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;"></unicode>
                           <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
                           <int value="4"></int>
                           <string role="key" value="exe.engine.field.FieldWithResources.persistenceVersion"></string>
@@ -4844,7 +4845,7 @@
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="82"></reference>
+  <reference key="64"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
