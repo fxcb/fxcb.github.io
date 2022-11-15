@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>03 - Llistes i iteració amb FOR | Programació - 1r Batx </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Fèlix Casanellas Berges" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Programació - 1r Batx</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inici</a></li>
+   <li><a href="b11__existeix_un_origen.html" class="daddy">B11 - Existeix un origen?</a>
+   <ul class="other-section">
+      <li><a href="ada_lovelace_el_poder_dunes_notes_al_marge.html" class="no-ch">Ada Lovelace, el poder d’unes notes al marge</a></li>
+      <li><a href="batalla_naval_algorismes_de_cerca.html" class="daddy">Batalla naval: Algorismes de cerca</a>
+      <ul class="other-section">
+         <li><a href="cerca_binria.html" class="no-ch">Cerca binària</a></li>
+      </ul>
+      </li>
+      <li><a href="instruccions_fonamentals_dun_algorisme.html" class="daddy">Instruccions fonamentals d'un algorisme</a>
+      <ul class="other-section">
+         <li><a href="condicionals.html" class="no-ch">Condicionals</a></li>
+         <li><a href="iteracions.html" class="no-ch">Iteracions</a></li>
+      </ul>
+      </li>
+      <li><a href="variables_i_tipus_de_dades.html" class="no-ch">Variables i tipus de dades</a></li>
+      <li><a href="descriure_un_algorisme.html" class="daddy">Descriure un algorisme</a>
+      <ul class="other-section">
+         <li><a href="diagrames_de_flux.html" class="no-ch">Diagrames de flux</a></li>
+         <li><a href="pseudocodi.html" class="no-ch">Pseudocodi</a></li>
+         <li><a href="llenguatges_de_programaci.html" class="no-ch">Llenguatges de programació</a></li>
+      </ul>
+      </li>
+      <li><a href="comencem_a_programar_en_python.html" class="no-ch">Comencem a programar en Python</a></li>
+      <li><a href="exercics_de_programaci_en_python.html" class="no-ch">Exercics de programació en Python</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="b12__tot_es_mou.html" class="current-page-parent daddy">B12 - Tot es mou?</a>
+   <ul>
+      <li><a href="01__alba_g_corral_en_la_frontera_de_dos_mons.html" class="no-ch">01 - Alba G. Corral, en la frontera de dos mons</a></li>
+      <li><a href="02__condicionals_ii.html" class="no-ch">02 - Condicionals II</a></li>
+      <li id="active"><a href="03__llistes_i_iteraci_amb_for.html" class="active no-ch">03 - Llistes i iteració amb FOR</a></li>
+   </ul>
+   </li>
+   <li><a href="b13__cap_on_anem.html" class="no-ch">B13 - Cap on anem?</a></li>
+   <li><a href="b14__cerquem_la_felicitat.html" class="no-ch">B14 - Cerquem la felicitat?</a></li>
+   <li><a href="b15__ofegats_pels_missatges.html" class="no-ch">B15 - Ofegats pels missatges</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="02__condicionals_ii.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b13__cap_on_anem.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">03 - Llistes i iteració amb FOR</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id48">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Llistes</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta48_112_2" class="block iDevice_content">
+<div class="exe-text"><figure class="exe-figure exe-image float-left license-custom" style="width: 200px; float: left;"><img src="Screenshot_1.png" alt="caixa amb etiqueta" style="float: left;" width="200" height="158" /></figure>
+<p>Fins ara hem utilitzat com a únic espai d'emmagatzematge d'informació les anomenades <strong>variables</strong>.</p>
+<p>Les variables ens permeten emmagatzemar un sol valor del tipus que sigui (enter, cadena de text, booleà...)</p>
+<p>Ens podem imaginar les variables com una caixa a la que podem accedir o assignar un valor a través de la seva <strong>etiqueta</strong></p>
+<figure class="exe-figure exe-image float-left license-custom" style="width: 200px; float: left; clear: both;"><img src="estanteria-Toolbox_EmmeBi_30.jpg" alt="prestatgeria" style="float: left;" width="484" height="526" /></figure>
+<p>En canvi, les <strong>llistes </strong>són estructures de dades on hi podem emmagatzemar diferents valors de manera ordenada.</p>
+<p>Ens podem imaginat una llista com un moble de calaixos numerats que anem omplint a mesura que anem necessitant. Així que tindrem tants calaixos com valors estem emmagatzemant.</p>
+<p>Les llistes disposen d'un <strong>índex </strong>que serveix per etiquetar cada posició i que va de 0 a n-1, on "n" és el nombre de valors emmagatzemats a la llista</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_explore" id="id49">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_explore.png)"><h1 class="iDeviceTitle">Investigueu</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta49_113_2" class="block iDevice_content">
+<div class="exe-text"><ul>
+<li>Consulteu a l'apartat de <a href="https://www.w3schools.com/python/python_lists_add.asp">llistes en Python del web W3C</a> sobre com inserir, consultar o eliminar valors d'una llista</li>
+<li>Responeu correctament les <a href="https://www.w3schools.com/python/exercise.asp?filename=exercise_lists6">preguntes sobre llistes en Python del web W3C</a></li>
+<li>Investigueu i experimenteu amb els <a href="https://www.w3schools.com/python/python_lists_methods.asp" target="_blank" rel="noopener">mètodes propis de les llistes</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id50">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Iteració amb FOR</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta50_114_2" class="block iDevice_content">
+<div class="exe-text"><p>Amb un comportament semblant al ja conegut WHILE, l'estructura <strong>FOR</strong> permet iterar, és a dir repetir un conjunt d'operacions un nombre determinat de vegades. En el bucle FOR, el nombre de vegades bé determinat pel nombre d'elements en una llista.</p>
+<p>El bucle FOR està especialment pensat per realitzar un conjunt d'operacions en relació al nombre de valors que conté una llista.</p>
+<div class="highlighted-code language-php line-numbers">
+<div>
+<pre><code>llista_fruites= ["apple", "banana", "cherry"]
+for fruita in llista_fruites:
+  print(fruita)</code></pre>
+</div>
+</div>
+<p>Dins el bucle FOR es crea una variable temporal que emmagatzema el valor de l'element tractat en cada iteració</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_activity" id="id51">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_activity.png)"><h1 class="iDeviceTitle">Activitats</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta51_115_2" class="block iDevice_content">
+<div class="exe-text"><ul>
+<li>Comproveu el funcionament del bucle FOR en els <a href="https://www.w3schools.com/python/python_for_loops.asp">diferents exemples del web W3C</a></li>
+<li>Feu els següents exercicis a Replit:
+<ul>
+<li><a href="https://replit.com/team/1r-batx/04-Metode-split">04. Mètode split</a></li>
+<li><a href="https://replit.com/team/1r-batx/5-Metodes-slice-i-count">05. Mètodes slice i count</a></li>
+<li><a href="https://replit.com/team/1r-batx/06-Cercles-concentrics-de-diferent-radi">06. Cercles concèntrics de diferent radi</a></li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="02__condicionals_ii.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b13__cap_on_anem.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>
