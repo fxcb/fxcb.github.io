@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>02 - La xarxa, clients i servidors | Programació - 1r Batx </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Fèlix Casanellas Berges" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-25"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Programació - 1r Batx</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inici</a></li>
+   <li><a href="b11__existeix_un_origen.html" class="daddy">B11 - Existeix un origen?</a>
+   <ul class="other-section">
+      <li><a href="ada_lovelace_el_poder_dunes_notes_al_marge.html" class="no-ch">Ada Lovelace, el poder d’unes notes al marge</a></li>
+      <li><a href="batalla_naval_algorismes_de_cerca.html" class="daddy">Batalla naval: Algorismes de cerca</a>
+      <ul class="other-section">
+         <li><a href="cerca_binria.html" class="no-ch">Cerca binària</a></li>
+      </ul>
+      </li>
+      <li><a href="instruccions_fonamentals_dun_algorisme.html" class="daddy">Instruccions fonamentals d'un algorisme</a>
+      <ul class="other-section">
+         <li><a href="condicionals.html" class="no-ch">Condicionals</a></li>
+         <li><a href="iteracions.html" class="no-ch">Iteracions</a></li>
+      </ul>
+      </li>
+      <li><a href="variables_i_tipus_de_dades.html" class="no-ch">Variables i tipus de dades</a></li>
+      <li><a href="descriure_un_algorisme.html" class="daddy">Descriure un algorisme</a>
+      <ul class="other-section">
+         <li><a href="diagrames_de_flux.html" class="no-ch">Diagrames de flux</a></li>
+         <li><a href="pseudocodi.html" class="no-ch">Pseudocodi</a></li>
+         <li><a href="llenguatges_de_programaci.html" class="no-ch">Llenguatges de programació</a></li>
+      </ul>
+      </li>
+      <li><a href="comencem_a_programar_en_python.html" class="no-ch">Comencem a programar en Python</a></li>
+      <li><a href="exercics_de_programaci_en_python.html" class="no-ch">Exercics de programació en Python</a></li>
+   </ul>
+   </li>
+   <li><a href="b12__tot_es_mou.html" class="daddy">B12 - Tot es mou?</a>
+   <ul class="other-section">
+      <li><a href="01__alba_g_corral_en_la_frontera_de_dos_mons.html" class="no-ch">01 - Alba G. Corral, en la frontera de dos mons</a></li>
+      <li><a href="02__condicionals_ii.html" class="no-ch">02 - Condicionals II</a></li>
+      <li><a href="03__llistes_i_iteraci_amb_for.html" class="no-ch">03 - Llistes i iteració amb FOR</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="b13__cap_on_anem.html" class="current-page-parent daddy">B13 - Cap on anem?</a>
+   <ul>
+      <li><a href="01__jude_milhon_les_noies_han_de_tenir_un_mdem.html" class="no-ch">01 - Jude Milhon, les noies han de tenir un módem</a></li>
+      <li id="active"><a href="02__la_xarxa_clients_i_servidors.html" class="active no-ch">02 - La xarxa, clients i servidors</a></li>
+   </ul>
+   </li>
+   <li><a href="b14__cerquem_la_felicitat.html" class="no-ch">B14 - Cerquem la felicitat?</a></li>
+   <li><a href="b15__ofegats_pels_missatges.html" class="no-ch">B15 - Ofegats pels missatges</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="01__jude_milhon_les_noies_han_de_tenir_un_mdem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b14__cerquem_la_felicitat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">02 - La xarxa, clients i servidors</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id55">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Estructura client-servidor</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta55_112_2" class="block iDevice_content">
+<div class="exe-text"><p>Tots els serveis als que accedim a través d'Internet (xarxes socials, pàgines web, correu electrònic, vídeo i audio en streaming, jocs on-line...) es troben allotjats en <strong>servidors</strong>. Els servidors són ordinadors amb unes prestacions elevades i amb uns programaris específics que es troben connectats a Internet de forma ininterompuda.</p>
+<figure class="exe-figure exe-image float-left" style="width: 350px;"><img src="epto-de-cliente-servidor-y-almacenamiento-en-la-nube-segura-en-internet-diversos-datos-de-los-di.jpg" alt="" width="350" height="233" />
+<figcaption class="figcaption"><span class="title"><em>Estructura client-servidor</em></span></figcaption>
+</figure>
+<p>Quan nosaltres, des del nostre ordinador o telèfon mòbil,  accedim a algun d'aquests serveis, actuem com a <strong>clients </strong>en el moment en què ens connectem a algun d'aquests servidors i li fem una petició concreta.</p>
+<p>Per tal d'accedir als continguts des de la banda del client també s'utilitza programari específic. Per exemple, per accedir a les pàgines web s'utilitza un <strong>navegador</strong> (Firefox, Chrome ... ), per accedir als continguts d'una xarxa social, normalment s'utilitza l'aplicació de la xarxa en concret</p>
+<p>Per tal que el programa client, per exemple el navegador, sàpiga a quin servidor d'ha de connectar per tal d'obtenir la informació que desitja, els servidors han d'estar identificats amb una adreça concreta. És el que anomenem <strong>adreça IP</strong></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id56">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Adreces IP</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta56_113_2" class="block iDevice_content">
+<div class="exe-text"><figure class="exe-figure exe-image float-right" style="width: 300px;"><img src="Figure-1-IPv4Addressformatwithdotteddecimalnotation-29c824f6a451d48d8c27759799f0c995.png" style="float: right;" width="300" height="169" /></figure>
+<p>Per tal que el programa client, per exemple el navegador, sàpiga a quin servidor s'ha de connectar per tal d'obtenir la informació que desitja, els servidors han d'estar identificats amb una adreça concreta. És el que anomenem <strong>adreça IP.</strong></p>
+<p>L'adreça IP és una estructura de quatre xifres compreses entre 0 i 255 separades entre elles per punts. Les adreces IP són úniques a la xarxa i serveixen per identificar cadascun dels dispositius que hi estan connectats.</p>
+<figure class="exe-figure exe-image float-right" style="width: 400px;"><img src="esquema_IP_privadas_e_IP_publicas.png" alt="" width="400" height="195" /></figure>
+<p></p>
+<p>Hem d'entendre que quan accedim a Internet a través del nostre mòbil o ordenador, el nostre dispositiu no passa a formar part directament de la xarxa Internet sinó que es connecta prèviament al que anomenem una <strong>xarxa privada </strong>gestionada pel <strong>router </strong>que tenim a casa o a l'institut. De manera que la nostra IP no serà una IP que formi part d'Internet sinó de la nostra xarxa privada</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_activity" id="id57">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_activity.png)"><h1 class="iDeviceTitle">Activitat</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta57_114_2" class="block iDevice_content">
+<div class="exe-text"><ul>
+<li>Exploreu la configuració del vostre Chromebook fins a trobar la vostra adreça IP.
+<ul>
+<li>Compareu-la amb la dels vostres companys/es</li>
+<li>Coincideixen? Per quin motiu?</li>
+</ul>
+</li>
+<li>Utilitzeu <a href="https://whatismyipaddress.com/">aquest servei on-line</a> que us indica quina és la vostra IP
+<ul>
+<li>Compareu-la amb la dels vostres companys/es</li>
+<li>Coincideixen? Per quin motiu?</li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id58">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Datacenters</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta58_115_2" class="block iDevice_content">
+<div class="exe-text"><figure class="exe-figure exe-image float-left" style="width: 300px;"><img src="barcelona.jpg" alt="" width="300" height="156" />
+<figcaption class="figcaption"><span class="title"><em>El Marenostrum</em></span></figcaption>
+</figure>
+<p>La majoria dels servidors s'agrupen en els anomenats datacenters, grans infraestructures tecnològiques que allotgen centenars o milers de màquines independents connectades en xarxa entre elles. La majoria dels datacenters són propietat d'empreses tot i que algunes institucions públiques, com universitats, també en disposen.</p>
+<p>A Barcelona, tenim el Marenostrum, el <em>datacenter </em>del <a href="https://www.bsc.es/">Barcelona Supercomputing Center</a> que no està orientat a oferir serveis a la ciutadania sinó a realitzar operacions de càlcul necessàries per a projectes de recerca.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_activity" id="id59">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_activity.png)"><h1 class="iDeviceTitle">Activitat</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta59_116_2" class="block iDevice_content">
+<div class="exe-text"><ul>
+<li>Explora en <a href="https://www.google.com/about/datacenters/">aquesta pàgina web</a> els diferents <em>datacenters</em> de l'empresa Google. En algun d'aquests <em>datacentesr</em> s'allotja tot la informació relativa a la teva carpeta de Drive, els teus missatges de Gmail...</li>
+<li>Reflexiona: Si els teus treballs estan al Drive i el <em>datacenter </em>és de Google, a qui pertanyen els teus treballs?</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="01__jude_milhon_les_noies_han_de_tenir_un_mdem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b14__cerquem_la_felicitat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>
