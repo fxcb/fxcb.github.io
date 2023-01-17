@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>03 - Servidor HTTP amb Python i Flask | Programació - 1r Batx </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Fèlix Casanellas Berges" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-26"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Omet navegació</a></p>
+<header id="header" ><div id="headerContent">Programació - 1r Batx</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inici</a></li>
+   <li><a href="b11__existeix_un_origen.html" class="daddy">B11 - Existeix un origen?</a>
+   <ul class="other-section">
+      <li><a href="ada_lovelace_el_poder_dunes_notes_al_marge.html" class="no-ch">Ada Lovelace, el poder d’unes notes al marge</a></li>
+      <li><a href="batalla_naval_algorismes_de_cerca.html" class="daddy">Batalla naval: Algorismes de cerca</a>
+      <ul class="other-section">
+         <li><a href="cerca_binria.html" class="no-ch">Cerca binària</a></li>
+      </ul>
+      </li>
+      <li><a href="instruccions_fonamentals_dun_algorisme.html" class="daddy">Instruccions fonamentals d'un algorisme</a>
+      <ul class="other-section">
+         <li><a href="condicionals.html" class="no-ch">Condicionals</a></li>
+         <li><a href="iteracions.html" class="no-ch">Iteracions</a></li>
+      </ul>
+      </li>
+      <li><a href="variables_i_tipus_de_dades.html" class="no-ch">Variables i tipus de dades</a></li>
+      <li><a href="descriure_un_algorisme.html" class="daddy">Descriure un algorisme</a>
+      <ul class="other-section">
+         <li><a href="diagrames_de_flux.html" class="no-ch">Diagrames de flux</a></li>
+         <li><a href="pseudocodi.html" class="no-ch">Pseudocodi</a></li>
+         <li><a href="llenguatges_de_programaci.html" class="no-ch">Llenguatges de programació</a></li>
+      </ul>
+      </li>
+      <li><a href="comencem_a_programar_en_python.html" class="no-ch">Comencem a programar en Python</a></li>
+      <li><a href="exercics_de_programaci_en_python.html" class="no-ch">Exercics de programació en Python</a></li>
+   </ul>
+   </li>
+   <li><a href="b12__tot_es_mou.html" class="daddy">B12 - Tot es mou?</a>
+   <ul class="other-section">
+      <li><a href="01__alba_g_corral_en_la_frontera_de_dos_mons.html" class="no-ch">01 - Alba G. Corral, en la frontera de dos mons</a></li>
+      <li><a href="02__condicionals_ii.html" class="no-ch">02 - Condicionals II</a></li>
+      <li><a href="03__llistes_i_iteraci_amb_for.html" class="no-ch">03 - Llistes i iteració amb FOR</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="b13__cap_on_anem.html" class="current-page-parent daddy">B13 - Cap on anem?</a>
+   <ul>
+      <li><a href="01__jude_milhon_les_noies_han_de_tenir_un_mdem.html" class="no-ch">01 - Jude Milhon, les noies han de tenir un módem</a></li>
+      <li><a href="02__la_xarxa_clients_i_servidors.html" class="no-ch">02 - La xarxa, clients i servidors</a></li>
+      <li id="active"><a href="03__servidor_http_amb_python_i_flask.html" class="active no-ch">03 - Servidor HTTP amb Python i Flask</a></li>
+   </ul>
+   </li>
+   <li><a href="b14__cerquem_la_felicitat.html" class="no-ch">B14 - Cerquem la felicitat?</a></li>
+   <li><a href="b15__ofegats_pels_missatges.html" class="no-ch">B15 - Ofegats pels missatges</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="02__la_xarxa_clients_i_servidors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b14__cerquem_la_felicitat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">03 - Servidor HTTP amb Python i Flask</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id66">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Servidor HTTP</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta66_115_2" class="block iDevice_content">
+<div class="exe-text"><p><img src="http_diagram.jpg" style="float: left; margin-right: 10px; margin-left: 10px;" width="278" height="198" />El servidor HTTP (Hyper Text Transfer Protocol) és l'encarregat d'atendre les peticions que fan els navegadors web (Firefox, Chrome, Safari... ). De fet, hipertext és un terme per referir-nos al que coneixem com a pàgines web.</p>
+<p>Tal com podem apreciar en l'esquema, el navegador fa una petició amb una determinada informació (capçaleres) sobre el que li està demanant i el servidor repon amb unes noves capçaleres junt amb el contingut sol·licitat.</p>
+<p>Els navegadors fan bàsicament dos tipus de peticions HTTP, les peticions de tipus <strong>GET </strong>en què simplement sol·liciten informació (les més comunes), i les peticions tipus <strong>POST </strong>en què el navegador aporta certa informació al servidor. Per exemple, en el moment de fer login a una pàgina web, el navegador realitza una petició POST en què proporciona el servidor el nom d'usuari i la contrasenya.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id68">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Codis HTTP</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta68_117_2" class="block iDevice_content">
+<div class="exe-text"><p><img src="HTTP-Response-Status-Codes.jpg" style="float: left; margin-right: 10px; margin-left: 10px;" width="300" height="292" />Els missatges HTTP disposen d'un sistema de codis que indiquen ràpidament l'estat en què es troba la comunicació.</p>
+<p>La primera xifra del codi fa referència a la categoria general.</p>
+<p>El més comú és que les comunicacions es realitzin correctament i que, per tant, la majoria dels missatges estiguin marcats amb el codi 200.</p>
+<p>Per altra banda, segur que en diferents ocasions ens hem trobat amb errors del tipus "404 Not Found" quan sol·licitem una direcció que no existeix o "500 Internal Server Error" quan el servidor falla per algun motiu.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id70">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Resposta HTTP</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta70_119_2" class="block iDevice_content">
+<div class="exe-text"><p><img src="5m3zxei6zkos.jpeg" alt="" style="margin-right: 10px; margin-left: 10px; float: right;" width="300" height="324" />El servidor HTTP retorna tota la informació necessària perquè el navegador pugui mostrar correctament la pàgina web sol·licitada.</p>
+<p>Les pàgines actuals incorporen informació codificada en tres tipus de llenguatges diferents. Codi <strong>HTML</strong> que incorpora l'estructura (esquelet) dels continguts, codi <strong>CSS</strong> que aporta a aquests continguts un aspecte estètic determinat (colors, tipografies...) i codi <strong>Javascript</strong> que, a través de la programació, fan que els continguts es comportin d'una certa manera (p.ex. animacions).</p>
+<p>Abordarem en detall aquests llenguatges més endavant.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_activity" id="id69">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_activity.png)"><h1 class="iDeviceTitle">Activitats</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta69_118_2" class="block iDevice_content">
+<div class="exe-text"><p>3.1. Utilitzant l'opció "xarxa" de les eines de desenvolupament de Chrome (tecla F11), poseu l'eina en mode enregistrament i demaneu al navegador que us mostri la pàgina de l'institut.</p>
+<p>Analitzeu la primera de les peticions realitzades (insviladomat/)<br />a) Quina informació podem identificar en les capçaleres?<br />b) La pestanya "Resposta" ens mostra la informació rebuda, en quin llenguatge està codificada<br />c) La pestanya "Previsualitza" ens mostra el que mostraria el navegador si només rebés aquest fitxer. Què hi podem apreciar?</p>
+<p>Per altra banda:<br />d) Quins altres tipus de fitxers rebem a conseqüència de la petició?<br />e) Podeu identificar com es relacionen els uns amb els altres?</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id65">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Flask</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta65_114_2" class="block iDevice_content">
+<div class="exe-text"><p><strong><img src="1200px-Flask_logo.svg.png" style="float: left; margin-right: 10px; margin-left: 10px;" width="299" height="117" />Flask</strong> és un entorn de treball per a aplicacions web escrit en Python que permet executar un petit servidor web que aten peticions HTTP i retorna majoritariament fitxers HTML, tot i que també pot retornar dades directament.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_activity" id="id71">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_activity.png)"><h1 class="iDeviceTitle">Activitats</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta71_120_2" class="block iDevice_content">
+<div class="exe-text"><p>3.2. Realitzeu les activitats del projecte de Replit <a href="https://replit.com/team/1r-batx/01-Posada-en-marxa-del-servidor-Flask" target="_blank" rel="noopener">01. Posada en marxa d'un servidor Flask</a></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice em_iDevice_geography" id="id67">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_geography.png)"><h1 class="iDeviceTitle">Referències</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta67_116_2" class="block iDevice_content">
+<div class="exe-text"><ul>
+<li><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener">Flask user's guide</a></li>
+<li><a href="https://nickymarino.com/2021/04/13/create-python-web-apps-with-flask-and-replit/" target="_blank" rel="noopener">Create Python Web Apps with Flask and Replit</a></li>
+<li><a href="https://medium.com/techcrush/how-to-render-html-file-in-flask-3fbfb16b47f6" target="_blank" rel="noopener">How to render HTML file in Flask</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Llicenciat sota la </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="02__la_xarxa_clients_i_servidors.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="b14__cerquem_la_felicitat.html" class="next"><span>Següent<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>
