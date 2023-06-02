@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Entorn d'examen</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
@@ -96,9 +96,28 @@
     <li><strong>Important:</strong> No podeu abandonar aquesta pestanya, en cas de fer-ho el vostre examen es lliurarà automaticament</li>
   </ul>
   <h1>Enunciat</h1>
+  <p>Gestioneu un aparcament diurn al centre de Barcelona amb un seguit de clients fidelitzats.
+    <br>El vostre negoci consisteix en cobrar als clients a final de mes segons el nombre de minuts que el seu vehicle hagi passat al vostre aparcament.
+    <br>La persona que treballa a l'entrada de l'aparcament utilitza un programari organitzat amb aquestes dues estructures de dades:
+    <ul>
+      <li>Un <strong>diccionari</strong> "clients" amb les fitxes de cada clients, les claus d'aquest diccionari les matrícules del vehicle de cada client (quatre xifres i tres lletres)
+         <br/>Les fitxes dels clients són per si mateixes un diccionari amb tres camps (matrícula, nom i telèfon)</li>
+      <li>Una <strong>llista</strong> en la que es van anotant les entrades de cada vehicle a l'aparcament.
+        <br>Cada vegada que un vehicle surt de l'aparcament s'afegeix a la llista un registre en forma diccionari amb la matrícula del vehicle i els minuts que ha passat a l'aparcament.
+        <br>Aquesta llista serveix per saber quants minuts ha passat cada client a l'aparcament a final de mes.
+    </ul>
+    La interfície del programa ha d'oferir les següents opcions:
+    <ol>
+      <li>Crear client (matrícula, nom i telèfon)</li>
+      <li>Mostrar clients (matrícula, nom i telèfon)</li>
+      <li>Eliminar client (indicant la matrícula del vehicle)</li>
+      <li>Registrar sortida de vehicle (matrícula i minutatge)</li>
+    </ol>
+  </p>
 
   <h1>Entorn de prova</h1>
-  <iframe src="https://trinket.io/embed/python3/730d6ab021" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen onfocus="focusIn()"></iframe>
+  <iframe src="https://trinket.io/embed/python/2953138904?showInstructions=true" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
   <h1>Lliurament</h1>
   <p id="lliurament"></p>
   <textarea id="resposta"></textarea>
