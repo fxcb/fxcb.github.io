@@ -6,20 +6,102 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    document.onvisibilitychange = function() {
+      if (document.visibilityState === 'hidden') {
+        alert("estàs sortint")
+      }
+    };
+    const urlParams = new URL(window.location.toLocaleString()).searchParams;
+    const token =  urlParams.get('token');
+    var dades = JSON.parse('{}');
+
+    function inicial(){
+      axios.get('https://6479c3f9a455e257fa63b90a.mockapi.io/examen/lliurament/'+token, {
+        responseType: 'json'
+      })
+        .then(function(res) {
+          if(res.status==200) {
+            document.getElementById('alumne').innerHTML = "<strong>Alumne: </strong>"+res.data.alumne;
+            document.getElementById('resposta').value = res.data.resposta;
+            if(res.data.date) {
+              document.getElementById("resposta").disabled = true;
+              document.getElementById("lliurar").disabled = true;
+              var date = new Date(res.data.date)
+              document.getElementById('lliurament').innerHTML = 'Examen lliurat: '+date.getDate()+
+                 "/"+(date.getMonth()+1)+
+                 "/"+date.getFullYear()+
+                 " "+date.getHours()+
+                 ":"+date.getMinutes()+
+                 ":"+date.getSeconds();
+            }
+            dades = res.data;
+          }
+          console.log(res.data.id);
+        })
+        .catch(function(err) {
+          alert('Error: ' + err);
+        });
+    }
+
+    function lliurar(){
+      dades.resposta = document.getElementById('resposta').value;
+      dades.date = Date.now();
+      axios.post('https://6479c3f9a455e257fa63b90a.mockapi.io/examen/lliurament_t/',dades)
+      .then(function(res) {
+        if(res) {
+          console.log(res);
+        }
+      })
+      .catch(function(err) {
+        alert('Error: ' + err);
+      });
+      axios.put('https://6479c3f9a455e257fa63b90a.mockapi.io/examen/lliurament/'+token, dades)
+        .then(function(res) {
+          if(res.status==200) {
+            alert("Has lliurat l'examen");
+            location.reload();
+          }
+        })
+        .catch(function(err) {
+          alert('Error: ' + err);
+        });
+    }
+
+    document.onvisibilitychange = function() {
+      if (document.visibilityState === 'hidden' && !dades.date) {
+        lliurar();
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 10px 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
 </head>
 
-<body>
-  <script src="script.js"></script>
-  <a onclick="alert('hola')">TEST</a>
+<body onload="inicial()">
+  <h1>Instruccions generals</h1>
+  <p id="alumne"></p>
+  <ul>
+    <li>Utilitzeu l'entorn de prova per implementar i testejar el vostre codi</li>
+    <li>Quan hagueu finalitzat copieu el vostre codi a la finestra de lliurament i premeu el botó "Lliurar"</li>
+    <li><strong>Important:</strong> No podeu abandonar aquesta pestanya, en cas de fer-ho el vostre examen es lliurarà automaticament</li>
+  </ul>
+  <h1>Enunciat</h1>
+
+  <h1>Entorn de prova</h1>
   <iframe src="https://trinket.io/embed/python3/730d6ab021" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen onfocus="focusIn()"></iframe>
-
-
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+  <h1>Lliurament</h1>
+  <p id="lliurament"></p>
+  <textarea id="resposta"></textarea>
+  <button id="lliurar" onclick="lliurar()">Lliurar</button>
 </body>
-
 </html>
