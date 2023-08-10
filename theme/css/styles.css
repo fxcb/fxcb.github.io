@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap');
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1024px;
+  }
+}
+
+body {
+  font-family: 'Playfair Display', serif !important;
+}
+
+a, a:hover {
+  color: #DE3163;
+}
+
+a:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+nav a {
+  color: #DE3163;
+  font-size: 14pt;
+}
+
+.nav#languages {
+  float: right;
+}
+
+.nav#languages .material-icons {
+  padding: 13px;
+}
+
+.nav#languages #lang-icon,
+.nav .active {
+  background-color: #eee;
+}
+
+.nav#languages #en {
+  display: none;
+}
+
+.nav .active a {
+  font-weight: 600;
+}
+
+a.navbar-brand {
+  color: black;
+  font-size: 16pt;
+  font-style: italic;
+  font-weight: 800;
+}
+
+a.navbar-brand:hover {
+  background-color: white;
+}
+
+#navbar {
+  border-bottom: solid 1px  #DE3163;
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+}
+
+#header-tag {
+  font-weight: 300;
+}
+
+.containertumb .middle h2,
+.containertumb .middle p {
+  text-align: center;
+}
+
+.row.projects {
+  margin-bottom: 20px;
+}
+
+#featured_image {
+  width: 100%;
+}
+
+.article-cont, .article-extra, .page-extra {
+  margin-top: 20px;
+}
+
+.article-extra .material-icons {
+  font-size: 20px;
+  float: left;
+}
+
+.article-extra .icon-text {
+  float: left;
+  padding-left: 5px;
+}
+
+.article-extra .icon-block {
+  clear: both;
+  padding-top: 10px;
+}
+
+#categories a, #links a {
+  font-size: 11pt;
+}
+
+#categories #tag-icon {
+  position: relative;
+}
+
+#categories #tags {
+  position: relative;
+  display: inline;
+}
+
+#abstract {
+  font-style: italic;
+  font-size: 13pt;
+  text-align: justify;
+  padding-bottom: 15px;
+  border-bottom: solid 1px #DE316366;
+}
+
+#content {
+  padding-top: 15px;
+}
+
+#content p {
+  font-size: 13pt;
+  text-align: justify;
+}
+
+#footer {
+  background-color: #eee;
+  border-top: solid 1px #DE316366;
+  padding: 20px 10px 50px;
+  margin-top: 20px;
+}
+
+#footer #brand {
+  font-size: 15pt;
+  font-style: italic;
+  font-weight: 800;
+}
+
+#footer #sitename {
+  font-size: 13pt;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
